@@ -220,7 +220,7 @@ pub fn apply_auth_list<
             continue;
         }
 
-        // 2. Verify the `nonce` is less than `2**64 - 1`.
+        // 2. Verify the `nonce` is less than `2**64 - 1` (i.e., nonce must be NOT equal to `2**64 - 1`).
         if authorization.nonce() == u64::MAX {
             continue;
         }
